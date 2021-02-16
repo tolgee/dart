@@ -1,22 +1,25 @@
-A library for Dart developers.
+Dart wrapper for Tolgee localization framework 
 
-Created from templates made available by Stagehand under a BSD-style
-[license](https://github.com/dart-lang/stagehand/blob/master/LICENSE).
-
+See full documentation at [http://tolgee.io]() or more complex example [here](https://github.com/tolgee/tolgee-dart/issues)
 ## Usage
 
 A simple usage example:
 
 ```dart
-import 'package:tolgee/tolgee.dart';
+ var config = {
+  'apiKey': "your api key here",
+  'apiUrl': "https://app.tolgee.io",
+  'targetElement': window.document.getElementsByTagName('body').first
+};
 
-main() {
-  var awesome = new Awesome();
-}
+var tolgee = Tolgee(config);
+await tolgee.run();
+
+querySelector('#output').text = await tolgee.translate('hello_world');
 ```
 
 ## Features and bugs
 
 Please file feature requests and bugs at the [issue tracker][tracker].
 
-[tracker]: http://example.com/issues/replaceme
+[tracker]: https://github.com/tolgee/tolgee-dart/issues
